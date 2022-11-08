@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import img1 from '../../assets/images/Login/img1.jpg'
 
 const Login = () => {
 
@@ -22,12 +23,12 @@ const Login = () => {
     }
     
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-100">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <img src={img1} alt="" />
                 </div>
-                <div className="card flex-shrink-0 w-full py-16 max-w-sm shadow-2xl bg-base-100">
+                <div className="card py-16 max-w-sm shadow-2xl bg-base-100">
                     <h1 className="text-5xl text-center font-bold">Login now!</h1>
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">

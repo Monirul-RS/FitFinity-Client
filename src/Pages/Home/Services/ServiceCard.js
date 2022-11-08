@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaArrowRight, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
@@ -10,7 +10,7 @@ const ServiceCard = ({ service }) => {
             <figure><img className='p-3 rounded-xl' src={img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl">{title}</h2>
-                <p className=''>{description.slice(0, 250) + '...'}.</p>
+                <p className=''>{description.slice(0, 150) + '...'}.</p>
                 <p className='text-2xl  font-semibold'>Price: ${price}</p>
                 <div className='flex justify-between'>
                     <div className=' flex text-lg font-semibold'>
