@@ -17,7 +17,7 @@ const ServiceCard = ({ service }) => {
                         <FaStar className='text-warning mr-2 mt-1'></FaStar>
                         <span>{ratings}</span>
                     </div>
-                    <button className='btn btn-error'>
+                    <button className='btn btn-error btn-outline'>
                         <Link to={`/details/${_id}`}> View Details</Link>
                     </button>
 

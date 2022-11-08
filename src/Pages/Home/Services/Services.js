@@ -13,13 +13,11 @@ const Services = () => {
     }, [])
     return (
         <div>
-            <div className='text-center mt-40'>
-                <p className="text-2xl font-bold text-orange-600 mb-4">Services</p>
-                <h2 className="text-5xl font-bold mb-4">Our Service Area</h2>
-                <p className='mb-8'>
-                    The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised
-                    <br />
-                    Words Which Don't Look Even Slightly Believable. </p>
+            <div className='md:mx-60 mt-40'>
+
+                <h2 className="text-5xl text-error font-bold mb-4">My Services</h2>
+                <p className='mb-8 '>
+                    My coaching options have been designed from the ground up to put you and your goals first. From one-on-one training in your private studio, to our renowned small group personal training and bespoke nutrition packages- everything we offer has been battle-tested over a decade in the field, to ensure the results you achieve are not only impressive in the short term- but also sustainable for life </p>
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-8 mb-8'>
                 {
