@@ -7,7 +7,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('services.json')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -28,6 +28,9 @@ const Services = () => {
                         service={service}
                     ></ServiceCard>)
                 }
+            </div>
+            <div className='text-center'>
+                <button className="btn btn-error">See All Services</button>
             </div>
         </div>
     );
