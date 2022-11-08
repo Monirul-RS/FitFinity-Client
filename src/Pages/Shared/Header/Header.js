@@ -5,12 +5,12 @@ const Header = () => {
 
 
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>    
-        <li><Link to='/login'>Login</Link></li>    
-    
+        <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/login'>Login</Link></li>
+
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar h-24 mb-12 bg-base-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,7 +30,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                <button className="btn btn-outline btn-error">Appointment</button>
             </div>
         </div>
     );
