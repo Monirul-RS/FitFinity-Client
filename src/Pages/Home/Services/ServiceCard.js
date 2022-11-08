@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
@@ -13,12 +13,14 @@ const ServiceCard = ({ service }) => {
                 <p className=''>{description.slice(0, 250) + '...'}.</p>
                 <p className='text-2xl  font-semibold'>Price: ${price}</p>
                 <div className='flex justify-between'>
-                    <p className='text-2xl  font-semibold'>Rating: {ratings}</p>
-                    <Link to={`/details/${_id}`}>
-                        <button className='btn btn-error'>
-                            View Details
-                        </button>
-                    </Link>
+                    <div className=' flex text-lg font-semibold'>
+                        <FaStar className='text-warning mr-2 mt-1'></FaStar>
+                        <span>{ratings}</span>
+                    </div>
+                    <button className='btn btn-error'>
+                        <Link to={`/details/${_id}`}> View Details</Link>
+                    </button>
+
                 </div>
             </div>
         </div>
