@@ -3,20 +3,29 @@ import { Link } from 'react-router-dom';
 import img from '../../../assets/images/Icon/favicon.ico'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
+import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(err => console.error(err))
+    }
 
 
     const menuItems = <>
-        <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'  ><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/allServices'>Services</Link></li>
         <li className='font-semibold'><Link to='/blog'>BLog</Link></li>
         {
             user?.email ?
                 <>
                     <li className='font-semibold'>
-                        <button className='btn btn-ghost'>Sign Out</button>
+                        <button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button>
                         <span>{user?.displayName}</span>
                     </li>
                 </>
@@ -26,13 +35,8 @@ const Header = () => {
 
         {
             user?.photoURL ?
-                // <Image
-                //     data-toggle="tooltip" data-placement="top" title={user.displayName}
-                //     style={{ height: '40px' }}
-                //     roundedCircle
-                //     src={user?.photoURL}
-                // ></Image>
-                <li>dfgdfgdf</li>
+                <> <img src={user?.photoURL} style={{ width: '40px' }} data-tip={user?.displayName}className='rounded-xl' alt="" />
+                </>
                 :
                 <FaUser className='mt-4'></FaUser>
         }
@@ -71,6 +75,7 @@ const Header = () => {
                     </div>
                 </button>
             </div>
+                <ReactTooltip /> 
         </div>
     );
 };

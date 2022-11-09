@@ -29,7 +29,7 @@ const ServiceDetails = () => {
                         <FaStar className='text-warning mr-2 mt-1'></FaStar>
                         <span>{ratings}</span>
                     </div>
-                    <button className="btn btn-primary">Get Started</button>
+                    <button className="btn btn-primary">Add review</button>
                 </div>
             </div>
         </div>

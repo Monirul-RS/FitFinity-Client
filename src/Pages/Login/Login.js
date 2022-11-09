@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import img1 from '../../assets/images/Login/img1.jpg'
 import useTitle from '../../hooks/useTitle';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -24,6 +26,8 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            toast.success('User logged in Succesfully');
+            form.reset();
 
 
             //    // get JWT token
@@ -78,6 +82,7 @@ const Login = () => {
                     <p className='text-center'>New to the website? <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link></p>
                 </div>
             </div>
+            <ToastContainer position="top-center"/>
         </div>
     );
 };
