@@ -1,16 +1,13 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import useTitle from '../../../hooks/useTitle';
+import React, { useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 
-const Services = () => {
+const AllServices = () => {
+
     const [services, setServices] = useState([]);
-    useTitle('Services')
+    // useTitle('Services')
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('http://localhost:5000/allServices')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -30,11 +27,8 @@ const Services = () => {
                     ></ServiceCard>)
                 }
             </div>
-            <div className='text-center mb-6'>
-                <Link to='/allServices'><button className="btn btn-error">See All Services</button></Link>
-            </div>
         </div>
     );
 };
 
-export default Services;
+export default AllServices;

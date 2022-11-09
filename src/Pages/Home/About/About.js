@@ -1,7 +1,6 @@
 import React from 'react';
 import pic1 from '../../../assets/images/About/pic1.jpg'
 import pic2 from '../../../assets/images/About/pic2.jpg'
-import useTitle from '../../../hooks/useTitle';
 
 const About = () => {
 

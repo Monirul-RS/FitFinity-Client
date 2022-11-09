@@ -8,9 +8,9 @@ const BannerItem = ({ slide }) => {
             <div className='img-gradient'>
                 <img src={image} className="w-full rounded-xl" />
             </div>
-            <div className="absolute  justify-end transform w-3/5 -translate-y-1/2 left-24 top-2/4">
+            <div className="absolute justify-end transform w-3/5 translate-y left-24 top-2/4 ">
                 <div className=" transform -translate-y-1/2 left-24 top-1/4">
-                    <h1 className='text-6xl text-error font-bold mb-4 text-white'>
+                    <h1 className='text-6xl text-error font-bold mb-4 text-error'>
                         Take Your Fitness <br />
                         To The Next Level
                     </h1>

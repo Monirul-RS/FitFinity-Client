@@ -38,7 +38,7 @@ To run this project, you will need to add the following environment variables to
 
 # Hi, I'm Monirul! 👋
 
-A fitness freak and trainer.
+A fitness freak and personal trainer.
 ## Installation
 
 Install my-project with npm
