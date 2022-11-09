@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
@@ -7,6 +7,7 @@ const Review = () => {
 
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext);
+ 
 
     const handlePlaceReview = event => {
         event.preventDefault();
@@ -15,7 +16,7 @@ const Review = () => {
         const email = user?.email || 'unregistered';
         const image = form.photo.value;
         const reviewText = form.review.value;
-        const rating = form.rating.value;
+        // const rating = form.rating.value;
 
         const review = {
             service: _id,
@@ -25,7 +26,7 @@ const Review = () => {
             email,
             image,
             reviewText,
-            rating
+            // rating
 
         }
 
@@ -40,7 +41,7 @@ const Review = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    toast.success('Order Placed Succesfully')
+                    toast.success('Review Added Succesfully')
                     form.reset();
                 }
             })
@@ -57,7 +58,7 @@ const Review = () => {
                     <input name='lastName' type="text" placeholder="Last Name" className="input input-bordered input-primary w-full" />
                     <input name='photo' type="text" placeholder="Your Image" defaultValue={user?.photoURL} className="input input-bordered input-primary w-full" />
                     <input name='email' type="text" placeholder="Your Email" defaultValue={user?.email} className="input input-bordered input-primary w-full" readOnly />
-                    <input name='rating' type="text" placeholder="Rating" className="input input-bordered input-primary w-full" />
+                    {/* <input name='rating' type="text" placeholder="Rating" className="input input-bordered input-primary w-full" /> */}
                 </div>
                 <textarea name='review' className="textarea textarea-primary text-xl h-32 w-full" placeholder="Review Text"></textarea>
                 <button className='btn btn-primary my-8'><input type="submit" value="Add your review" /></button>

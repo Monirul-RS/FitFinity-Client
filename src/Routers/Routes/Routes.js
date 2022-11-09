@@ -2,6 +2,7 @@ import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Home from '../../Pages/Home/Home/Home';
 import AddServices from "../../Pages/Home/Services/AddServices/AddServices";
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 import AllServices from "../../Pages/Home/Services/AllServices";
 import ServiceDetails from "../../Pages/Home/Services/ServiceDetails";
 import Services from "../../Pages/Home/Services/Services";
@@ -49,11 +50,11 @@ const router = createBrowserRouter([
         },
         {
           path: '/myReviews',
-          element: <MyReviews></MyReviews>
+          element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
         },
         {
           path: '/addServices',
-          element: <AddServices></AddServices>,
+          element: <PrivateRoute><AddServices></AddServices></PrivateRoute>,
           // loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
         }
       ]

@@ -28,6 +28,7 @@ const Login = () => {
             console.log(user);
             toast.success('User logged in Succesfully');
             form.reset();
+            navigate(from, { replace: true });
 
 
             //    // get JWT token

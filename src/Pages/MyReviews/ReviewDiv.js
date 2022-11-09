@@ -16,7 +16,7 @@ const ReviewDiv = ({ review, handleDelete }) => {
         <div className=" border shadow-xl shadow-violet-400 p-8">
             <div className='flex justify-between'>
                 <div>
-                    <h1 className="text-4xl font-bold  my-4">{customer}</h1>
+                    <h1 className="text-4xl font-bold  my-4">{serviceName}</h1>
                     <p className=''>{reviewText}</p>
 
                 </div>
@@ -28,12 +28,21 @@ const ReviewDiv = ({ review, handleDelete }) => {
                     </div>
                 </div>
             </div>
-            <div>
-                <h1 className='text-xl font-semibold text-error'>{serviceName}</h1>
-                <div className='flex'>
-                    <FaStar className='text-warning mt-1 mr-2'></FaStar>
-                    <p>{rating}</p>
+            <div className='mt-4 '>
+                <div className="rating rating-md rating-half">
+                    <input type="radio" name="rating-10" className="rating-hidden" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-2" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-2" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-2" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-1" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-2" />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-1" checked />
+                    <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-2" />
                 </div>
+                <h1 className='text-lg ml-2 font-semibold text-error'>{customer}</h1>
             </div>
             <div className='flex justify-between mt-4'>
                 <div className=" text-xl "><button className='btn btn-outline'>Edit Review</button></div>

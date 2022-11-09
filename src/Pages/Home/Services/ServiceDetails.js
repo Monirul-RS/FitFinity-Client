@@ -15,11 +15,17 @@ const ServiceDetails = () => {
     useTitle('Service Details');
 
     const [reviews, setReviews] = useState([]);
+
     useEffect(() => {
         fetch(`http://localhost:5000/reviews`)
             .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [user?.email]);
+            .then(data => {
+                const newReview = data.filter(d => d.service === _id)
+                setReviews(newReview);
+            })
+    }, []);
+    // ?email=${user?.email}
+    // user?.email
     return (
         <div>
             <div className="hero min-h-screen w-full bg-base-100">

@@ -21,7 +21,7 @@ const SocialLogin = () => {
         <div>
             <p className='text-center'>Social login</p>
             <p className='text-center'>
-                <button onClick={handleGoogleSignIn} className='btn btn-error'>Google</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-error'> Google</button>
             </p>
         </div>
     );

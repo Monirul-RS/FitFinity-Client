@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider'
-
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../../../hooks/useTitle';
+
 
 const AddServices = () => {
     // const {_id, title} = useLoaderData();
     const { user } = useContext(AuthContext);
+    useTitle('Add services')
 
     const handleAddServices = event => {
         event.preventDefault();
@@ -57,7 +59,7 @@ const AddServices = () => {
                         <input name='duration' type="text" placeholder="Duration" className="input input-bordered input-primary w-full" />
                     </div>
                     <textarea name='description' className="textarea textarea-primary text-xl h-32 w-full" placeholder="Service Description"></textarea>
-                    <button className='btn btn-primary my-8'><input type="submit" value="Add your review" /></button>
+                    <button className='btn btn-primary my-8'><input type="submit" value="Add Services" /></button>
                 </form>
                 <ToastContainer position='top-center'/>
             </div>
