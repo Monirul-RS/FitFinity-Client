@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import img from '../../../assets/images/Icon/favicon.ico'
 
 const Header = () => {
 
@@ -22,8 +23,9 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">
-                    daisyUI
+                <img className='w-20' src={img} alt="" />
+                <Link to='/' className="btn btn-ghost normal-case text-2xl">
+                Fitfinity
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">

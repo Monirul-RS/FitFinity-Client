@@ -15,8 +15,8 @@ const Services = () => {
         <div>
             <div className='md:mx-60 mt-40'>
 
-                <h2 className="text-5xl text-error font-bold mb-4">My Services</h2>
-                <p className='mb-8 '>
+                <h2 className="text-5xl text-error text-center font-bold mb-4">My Services</h2>
+                <p className='mb-8 text-center '>
                     My coaching options have been designed from the ground up to put you and your goals first. From one-on-one training in your private studio, to our renowned small group personal training and bespoke nutrition packages- everything we offer has been battle-tested over a decade in the field, to ensure the results you achieve are not only impressive in the short term- but also sustainable for life </p>
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-8 mb-8'>
