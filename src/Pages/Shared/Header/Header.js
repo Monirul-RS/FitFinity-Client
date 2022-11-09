@@ -20,12 +20,21 @@ const Header = () => {
     const menuItems = <>
         <li className='font-semibold'  ><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/allServices'>Services</Link></li>
+        {
+            user?.email ?
+                <>
+                    <li className='font-semibold'><Link to='/myReviews'>MyReviews</Link></li>
+                    <li className='font-semibold'><Link to='/addServices'>Add Services</Link></li>
+                </>
+                :
+                <></>
+        }
         <li className='font-semibold'><Link to='/blog'>BLog</Link></li>
         {
             user?.email ?
                 <>
                     <li className='font-semibold'>
-                        <button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button>
+                        <Link onClick={handleLogOut} className=''>Sign Out</Link>
                         <span>{user?.displayName}</span>
                     </li>
                 </>
@@ -35,7 +44,7 @@ const Header = () => {
 
         {
             user?.photoURL ?
-                <> <img src={user?.photoURL} style={{ width: '40px' }} data-tip={user?.displayName}className='rounded-xl' alt="" />
+                <> <img src={user?.photoURL} style={{ width: '40px' }} data-tip={user?.displayName} className='rounded-xl' alt="" />
                 </>
                 :
                 <FaUser className='mt-4'></FaUser>
@@ -75,7 +84,7 @@ const Header = () => {
                     </div>
                 </button>
             </div>
-                <ReactTooltip /> 
+            <ReactTooltip />
         </div>
     );
 };

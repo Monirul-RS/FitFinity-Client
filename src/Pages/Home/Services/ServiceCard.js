@@ -8,7 +8,7 @@ import useTitle from '../../../hooks/useTitle';
 const ServiceCard = ({ service }) => {
     
 
-    const { _id, img, price, title, ratings, description } = service;
+    const { _id, img, price, title, duration, ratings, description } = service;
     return (
         <div className="card  card-compact bg-base-200 shadow-xl sm:w-full">
             <PhotoProvider>
@@ -22,7 +22,7 @@ const ServiceCard = ({ service }) => {
                 <p className='text-2xl  font-semibold'>Price: ${price}</p>
                 <div className='flex justify-between'>
                     <div className=' flex text-lg font-semibold'>
-                        <FaStar className='text-warning mr-2 mt-1'></FaStar>
+                       Rating:<FaStar className='text-warning mr-1 mt-1'></FaStar>
                         <span>{ratings}</span>
                     </div>
                     <button className='btn btn-error btn-outline'>

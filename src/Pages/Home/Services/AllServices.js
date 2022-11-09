@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
 const AllServices = () => {
 
     const [services, setServices] = useState([]);
-    // useTitle('Services')
+    useTitle('Services')
 
     useEffect(() => {
         fetch('http://localhost:5000/allServices')
@@ -13,6 +14,16 @@ const AllServices = () => {
     }, [])
     return (
         <div>
+            <div className="hero h-96" style={{ backgroundImage: `url("https://i.ibb.co/CbYrtyv/shirtless-bodybuilder-doing-side-plank-exercise.jpg")` }}>
+                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-content text-neutral-content pt-32 pb-10 mb-2">
+                    <div className="max-w-md">
+                        <h1 className="mb-5 text-5xl text-error font-bold">MY SERVICES</h1>
+                        <p className="mb-5">READ EVERYTHING FITNESS, TRAINING, NUTRITION AND HEALTH RELATED FROM ROBERT COTTERILL.</p>
+
+                    </div>
+                </div>
+            </div>
             <div className='md:mx-60 mt-40'>
 
                 <h2 className="text-5xl text-error text-center font-bold mb-4">My Services</h2>
