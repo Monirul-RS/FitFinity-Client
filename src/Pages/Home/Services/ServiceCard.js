@@ -3,8 +3,10 @@ import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../../hooks/useTitle';
 
 const ServiceCard = ({ service }) => {
+    
 
     const { _id, img, price, title, ratings, description } = service;
     return (

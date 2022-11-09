@@ -3,10 +3,13 @@ import { useLoaderData } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../../hooks/useTitle';
 
 const ServiceDetails = () => {
 
     const { _id, img, price, title, ratings, description } = useLoaderData();
+
+    useTitle('Service Details')
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">

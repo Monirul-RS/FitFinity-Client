@@ -1,6 +1,9 @@
 import React from 'react';
+import useTitle from '../../../hooks/useTitle';
 
 const Claim = () => {
+
+    
     return (
         <div className='bg-base-200'>
             <div className='text-center p-32'>
