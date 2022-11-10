@@ -10,13 +10,13 @@ const Services = () => {
     useTitle('Services')
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://assignment-11-server-eta.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
     return (
         <div>
-            
+
             <div className='md:mx-60 mt-40'>
 
                 <h2 className="text-5xl text-error text-center font-bold mb-4">My Services</h2>

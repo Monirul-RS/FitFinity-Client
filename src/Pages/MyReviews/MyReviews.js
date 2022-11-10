@@ -11,7 +11,7 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        fetch(`https://assignment-11-server-eta.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('trainer-token')}`
             }
@@ -31,7 +31,7 @@ const MyReviews = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete the review');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://assignment-11-server-eta.vercel.app/reviews/${id}`, {
                 method: "DELETE",
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('trainer-token')}`
@@ -68,7 +68,7 @@ const MyReviews = () => {
                     <h2 className='text-center text-5xl font-bold my-10'>No review added.</h2>
             }
             <div className=" w-full mb-16">
-                <div className='grid grid-cols-2 gap-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mx-4'>
                     {
                         reviews.map(review => <ReviewDiv
                             key={review._id}

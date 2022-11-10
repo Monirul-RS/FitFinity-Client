@@ -36,7 +36,7 @@ const Login = () => {
                 console.log(currentUser)
 
                 // get JWT token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://assignment-11-server-eta.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

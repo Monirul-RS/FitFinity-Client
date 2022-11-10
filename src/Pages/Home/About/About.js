@@ -5,8 +5,8 @@ import pic2 from '../../../assets/images/About/pic2.jpg'
 const About = () => {
 
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row">
+        <div className="hero lg:min-h-screen bg-base-200">
+            <div className="hero-content flex-col-reverse  lg:flex-row">
                 <div className='w-1/2 relative'>
                     <img src={pic1} className=" rounded-lg shadow-2xl right-24 relative mask mask-hexagon-2" alt='' />
                     <img src={pic2} className=" rounded-lg shadow-2xl absolute right-16 top-2/3 w-4/5  mask mask-hexagon-2"  alt=''/>

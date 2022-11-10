@@ -17,7 +17,7 @@ const ServiceDetails = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://assignment-11-server-eta.vercel.app/reviews`)
             .then(res => res.json())
             .then(data => {
                 const newReview = data.filter(d => d.service === _id)
@@ -42,11 +42,11 @@ const ServiceDetails = () => {
                         <h1 className="text-5xl font-bold">{title}</h1>
                         <p className="py-6">{description}</p>
                         <p className='text-2xl  font-semibold'>Price: ${price}</p>
-                        <p className='text-xl  font-semibold'>Duration: {duration}</p>             
+                        <p className='text-xl  font-semibold'>Duration: {duration}</p>
                         <div className=' flex text-lg font-semibold'>
-                           Rating: <FaStar className='text-warning mr-1 mt-1'></FaStar>
+                            Rating: <FaStar className='text-warning mr-1 mt-1'></FaStar>
                             <span>{ratings}</span>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
