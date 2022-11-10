@@ -4,10 +4,10 @@ import useTitle from '../../hooks/useTitle';
 const Blog = () => {
 
     useTitle('Blog');
-    
+
     return (
         <div>
-            <div className="hero h-96" style={{ backgroundImage: `url("https://i.ibb.co/CbYrtyv/shirtless-bodybuilder-doing-side-plank-exercise.jpg")` }}>
+            <div className="hero h-96" style={{ backgroundImage: `url("https://i.ibb.co/7Vxr0qz/unstoppable-young-muscular-caucasian-athlete-practicing-squats-gym-with-weight-male-model-doing-stre.jpg")` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-neutral-content pt-32 pb-10 mb-2">
                     <div className="max-w-md">
@@ -31,7 +31,7 @@ const Blog = () => {
 
                                 NoSQL database stands for “Not Only SQL” or “Not SQL.” Though a better term would NoREL NoSQL caught on. Carl Strozz introduced the NoSQL concept in 1998.
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ const Blog = () => {
                                 JWTs differ from other web tokens in that they contain a set of claims. Claims are used to transmit information between two parties. What these claims are depends on the use case at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted.
 
                                 A JWT is a string made up of three parts, separated by dots (.), and serialized using base64. In the most common serialization format, compact serialization, the JWT looks something like this: xxxxx.yyyyy.zzzzz.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ const Blog = () => {
                             <p className="py-6"> <span className='text-xl text-blue-800'>Ans: </span> <br />NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them. EventLoop is the listener for the EventQueue.
 
                                 If NodeJS can process the request without I/O blocking then the event loop would itself process the request and sends the response back to the client by itself. But, it is possible to process multiple requests parallelly using the NodeJS cluster module or worker_threads module.A single instance of Node.js runs in a single thread. If you have a multi-core system then you can utilize every core. Sometimes developer wants to launch a cluster of NodeJS process to take advantage of the multi-core system.</p>
-                            
+
                         </div>
                     </div>
                 </div>

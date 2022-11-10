@@ -10,6 +10,7 @@ import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import Review from "../../Pages/Review/Review";
 import SignUp from "../../Pages/SignUp/SignUp";
+import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -57,7 +58,11 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AddServices></AddServices></PrivateRoute>,
         // loader: ({params}) => fetch(`https://assignment-11-server-eta.vercel.app/services/${params.id}`)
       }
-    ]
+    ],
+  },
+  {
+    path: '*',
+    element: <ErrorPage></ErrorPage>
   }
 ]);
 

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FaGoogle } from 'react-icons/fa';
 // import { setAuthToken } from '../../../api/auth';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
@@ -21,7 +22,7 @@ const SocialLogin = () => {
         <div>
             <p className='text-center'>Social login</p>
             <p className='text-center'>
-                <button onClick={handleGoogleSignIn} className='btn btn-error'> Google</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-zinc w-full'> <FaGoogle className='mr-2'></FaGoogle> Google</button>
             </p>
         </div>
     );
