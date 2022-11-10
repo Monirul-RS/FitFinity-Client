@@ -15,7 +15,7 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
-    const handleLogin = event =>{
+    const handleLogin = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -23,35 +23,39 @@ const Login = () => {
         const password = form.password.value;
 
         logIn(email, password)
-        .then(result =>{
-            const user = result.user;
-            console.log(user);
-            toast.success('User logged in Succesfully');
-            form.reset();
-            navigate(from, { replace: true });
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('User logged in Succesfully');
+                form.reset();
+                // navigate(from, { replace: true });
 
+                const currentUser = {
+                    email: user.email
+                }
+                console.log(currentUser)
 
-            //    // get JWT token
-            //    fetch('https://genius-car-server-rho-ashy.vercel.app/jwt', {
-            //     method: 'POST',
-            //     headers: {
-            //         'content-type': 'application/json'
-            //     },
-            //     body: JSON.stringify(currentUser)
-            // })
-            //     .then(res => res.json())
-            //     .then(data => {
-            //         console.log(data);
+                // get JWT token
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
 
-            //         // Local storage is the easiest but not the best place to store JWT token
-            //         localStorage.setItem('genius-token', data.token);
-            //         navigate(from, { replace: true });
+                        // Local storage is the easiest but not the best place to store JWT token
+                        localStorage.setItem('trainer-token', data.token);
+                        navigate(from, { replace: true });
 
-            //     })
-        })
-        .catch(err => console.error(err))
+                    })
+            })
+            .catch(err => console.error(err))
     }
-    
+
     return (
         <div className="hero min-h-screen bg-base-100">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
@@ -83,7 +87,7 @@ const Login = () => {
                     <p className='text-center'>New to the website? <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link></p>
                 </div>
             </div>
-            <ToastContainer position="top-center"/>
+            <ToastContainer position="top-center" />
         </div>
     );
 };

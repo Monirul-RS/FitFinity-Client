@@ -5,22 +5,37 @@ import useTitle from '../../hooks/useTitle';
 import ReviewDiv from './ReviewDiv';
 
 const MyReviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     useTitle('My Reviews')
 
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [user?.email]);
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('trainer-token')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    logOut();
+                }
+                return res.json()
+            })
+            .then(data => {
+                // console.log('received',data);
+                setReviews(data);
+            })
+    }, [user?.email, logOut]);
 
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete the review');
         if (proceed) {
             fetch(`http://localhost:5000/reviews/${id}`, {
                 method: "DELETE",
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('trainer-token')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
@@ -46,12 +61,12 @@ const MyReviews = () => {
                     </div>
                 </div>
             </div>
-           {
-            reviews?.length > 0 ?
-            <h2 className='text-center text-5xl font-bold my-10'>You have given : {reviews.length} reviews</h2>
-            :
-            <h2 className='text-center text-5xl font-bold my-10'>No review added.</h2>
-           }
+            {
+                reviews?.length > 0 ?
+                    <h2 className='text-center text-5xl font-bold my-10'>You have given : {reviews.length} reviews</h2>
+                    :
+                    <h2 className='text-center text-5xl font-bold my-10'>No review added.</h2>
+            }
             <div className=" w-full mb-16">
                 <div className='grid grid-cols-2 gap-6'>
                     {

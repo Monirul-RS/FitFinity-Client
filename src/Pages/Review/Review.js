@@ -7,7 +7,7 @@ const Review = () => {
 
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext);
- 
+
 
     const handlePlaceReview = event => {
         event.preventDefault();
@@ -33,7 +33,9 @@ const Review = () => {
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('trainer-token')}`
+
             },
             body: JSON.stringify(review)
         })
@@ -63,7 +65,7 @@ const Review = () => {
                 <textarea name='review' className="textarea textarea-primary text-xl h-32 w-full" placeholder="Review Text"></textarea>
                 <button className='btn btn-primary my-8'><input type="submit" value="Add your review" /></button>
             </form>
-            <ToastContainer position='top-center'/>
+            <ToastContainer position='top-center' />
         </div>
     );
 };
