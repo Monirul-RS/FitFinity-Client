@@ -12,20 +12,18 @@ const ServiceDetails = () => {
     const { user } = useContext(AuthContext);
 
     const { _id, img, price, title, duration, ratings, description } = useLoaderData();
+    console.log(price);
     useTitle('Service Details');
 
     const [reviews, setReviews] = useState([]);
 
-    useEffect(() => {
-        fetch(`https://assignment-11-server-eta.vercel.app/reviews`)
-            .then(res => res.json())
-            .then(data => {
-                const newReview = data.filter(d => d.service === _id)
-                setReviews(newReview);
-            })
-    }, []);
-    // ?email=${user?.email}
-    // user?.email
+    // useEffect(() => {
+    //     fetch(`https://assignment-11-server-eta.vercel.app/reviews?email=${user?.email}`)
+    //         .then(res => res.json())
+    //         .then(data => setReviews(data))
+    // }, [user?.email]);
+    // 
+    // 
     return (
         <div>
             <div className="hero min-h-screen w-full bg-base-100">
@@ -64,12 +62,12 @@ const ServiceDetails = () => {
                     </div>
                 </div>
                 <div className='grid grid-cols-2 gap-6 my-16'>
-                    {
+                    {/* {
                         reviews.map(review => <ServiceDetailsReview
                             key={_id}
                             review={review}
                         ></ServiceDetailsReview>)
-                    }
+                    } */}
                 </div>
             </div>
         </div>
