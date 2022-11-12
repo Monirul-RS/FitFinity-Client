@@ -28,32 +28,32 @@ const Login = () => {
                 console.log(user);
                 toast.success('User logged in Succesfully');
                 form.reset();
-                // navigate(from, { replace: true });
+                navigate(from, { replace: true });
 
-                const currentUser = {
-                    email: user.email
-                }
-                console.log(currentUser)
+                // const currentUser = {
+                //     email: user.email
+                // }
+                // console.log(currentUser)
 
                 // get JWT token
-                fetch('https://assignment-11-server-eta.vercel.app/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(currentUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
+                // fetch('https://assignment-11-server-eta.vercel.app/jwt', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(currentUser)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log(data);
 
-                        // Local storage is the easiest but not the best place to store JWT token
-                        localStorage.setItem('trainer-token', data.token);
-                        navigate(from, { replace: true });
+                //         // Local storage is the easiest but not the best place to store JWT token
+                //         localStorage.setItem('trainer-token', data.token);
+                //         navigate(from, { replace: true });
 
-                    })
+                //     })
             })
-            .catch(err => console.error(err))
+            // .catch(err => console.error(err))
     }
 
     return (

@@ -1,3 +1,11 @@
 .height-carousel{
     height: 800px;
   }
+
+
+  @media only screen and (max-width: 767px) {
+    
+    .height-carousel{
+      height: 350px;
+    }
+  }

@@ -34,7 +34,7 @@ const Review = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                authorization: `Bearer ${localStorage.getItem('trainer-token')}`
+                // authorization: `Bearer ${localStorage.getItem('trainer-token')}`
 
             },
             body: JSON.stringify(review)

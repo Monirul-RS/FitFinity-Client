@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const ServiceDetailsReview = ({ review }) => {
     const { _id, serviceName, image, rating, customer, reviewText, service } = review;
+    console.log(serviceName)
 
    
     return (

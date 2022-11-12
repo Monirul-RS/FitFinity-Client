@@ -12,23 +12,25 @@ const ServiceDetails = () => {
     const { user } = useContext(AuthContext);
 
     const { _id, img, price, title, duration, ratings, description } = useLoaderData();
-    console.log(price);
+    // console.log(price);
     useTitle('Service Details');
 
     const [reviews, setReviews] = useState([]);
 
-    // useEffect(() => {
-    //     fetch(`https://assignment-11-server-eta.vercel.app/reviews?email=${user?.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setReviews(data))
-    // }, [user?.email]);
-    // 
-    // 
+    useEffect(() => {
+        fetch(`https://assignment-11-server-eta.vercel.app/reviews`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const newReview = data.filter( d => d.service === _id)
+                setReviews(newReview)})
+    }, []);
+    
     return (
         <div>
             <div className="hero min-h-screen w-full bg-base-100">
                 <div className="hero-content flex-col lg:flex-row">
-                    <div className='w-1/2 mr-4'>
+                    <div className='md:w-1/2 mr-4'>
                         {/* <img src={img} className="rounded-lg shadow-2xl w-full h-full" alt='' /> */}
                         <PhotoProvider>
                             <PhotoView src={img}>
@@ -36,7 +38,7 @@ const ServiceDetails = () => {
                             </PhotoView>
                         </PhotoProvider>
                     </div>
-                    <div className='w-1/2'>
+                    <div className='md:w-1/2'>
                         <h1 className="text-5xl font-bold">{title}</h1>
                         <p className="py-6">{description}</p>
                         <p className='text-2xl  font-semibold'>Price: ${price}</p>
@@ -61,13 +63,13 @@ const ServiceDetails = () => {
                         }
                     </div>
                 </div>
-                <div className='grid grid-cols-2 gap-6 my-16'>
-                    {/* {
+                <div className='grid md:grid-cols-2 mx-8 gap-6 my-16'>
+                    {
                         reviews.map(review => <ServiceDetailsReview
                             key={_id}
                             review={review}
                         ></ServiceDetailsReview>)
-                    } */}
+                    }
                 </div>
             </div>
         </div>

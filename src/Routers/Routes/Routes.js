@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({ params }) => fetch(`https://assignment-11-server-eta.vercel.app/allServices/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-eta.vercel.app/services/${params.id}`)
       },
       {
         path: '/review/:id',
